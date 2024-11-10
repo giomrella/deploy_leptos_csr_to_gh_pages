@@ -45,13 +45,30 @@ fn main() {
         <Meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <Router>
+			<nav>
+			  <A href="about">"About"</A>
+			  <A href="contact">"Contact"</A>
+			</nav>
+        <App increment=5 />
             <Routes>
                 <Route path="/" view=Home/>
+                <Route path="/about" view=About/>
+                <Route path="/contact" view=Contact/>
                 <Route path="/*" view=NotFound/>
             </Routes>
         </Router>
         }
     })
+}
+
+#[component]
+pub fn About() -> impl IntoView {
+    view! { <h1>"About"</h1>  }
+}
+
+#[component]
+pub fn Contact() -> impl IntoView {
+    view! { <h1>"Contact"</h1>  }
 }
 
 /// 404 Not Found Page
@@ -103,7 +120,6 @@ pub fn Home() -> impl IntoView {
                 <p>"A site written in Rust using "<a href="https://github.com/leptos-rs/leptos" target="_blank">"Leptos"</a>" deployed on Github Pages"</p>
                 <p>"The backend will also be written in Rust and deployed on AWS Lambda"</p>
             </div>
-            <App increment=5 />
         </ErrorBoundary>
     }
 }
