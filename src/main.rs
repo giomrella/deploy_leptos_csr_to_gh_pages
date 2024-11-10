@@ -44,13 +44,13 @@ fn main() {
         <Meta charset="UTF-8"/>
         <Meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <Router>
+        <Router base="deploy_leptos_csr_to_gh_pages">
 			<nav>
 			  <A href="about">"About"</A>
 			  <A href="contact">"Contact"</A>
 			</nav>
         <App increment=5 />
-            <Routes>
+            <Routes base="deploy_leptos_csr_to_gh_pages".to_owned()>
                 <Route path="/" view=Home/>
                 <Route path="/about" view=About/>
                 <Route path="/contact" view=Contact/>
