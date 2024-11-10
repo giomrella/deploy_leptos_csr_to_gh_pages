@@ -46,12 +46,15 @@ fn main() {
 
         <Router base="deploy_leptos_csr_to_gh_pages">
 			<nav>
-			  <A href="about">"About"</A>
-			  <A href="contact">"Contact"</A>
+			  <A href="home">"Home"</A>"-"
+			  <A href="about">"About"</A>"-"
+			  <A href="contact">"Contact"</A>"-"
 			</nav>
         <App increment=5 />
             <Routes base="deploy_leptos_csr_to_gh_pages".to_owned()>
+                <Route path="" view=Home/>
                 <Route path="/" view=Home/>
+                <Route path="/home" view=Home/>
                 <Route path="/about" view=About/>
                 <Route path="/contact" view=Contact/>
                 <Route path="/*" view=NotFound/>
